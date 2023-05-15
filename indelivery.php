@@ -32,6 +32,7 @@ else{
 }
 mysqli_close($con)
 ?>
-
+<link rel="stylesheet" href="logincss.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 <form name="back" method="post" action="deliveryform.php">
 <input name="reset" type="submit" id="Back" value="Back"/>

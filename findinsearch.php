@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="logincss.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
 <?php
 $con=mysqli_connect("localhost","root","","studio8");
 // Check connection
