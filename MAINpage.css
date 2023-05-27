@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: url("BG_MAIN_STUDIO8.png");
+    background-size: cover;
+    background-position: center;
+}
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbarTabFont{
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.logo_MAIN{
+    width: 120px;
+    cursor: pointer;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 1rem;
+    position: relative;  
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: #000000;
+    text-transform: uppercase;
+}
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0%;
+    background: #FFCCFF;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+.navbar ul li:hover::after{
+    width: 100%;
+}
+.navbarIcon{
+    width: 20px;
+    cursor: pointer;
+    margin: 0 20px;
+    position: relative;
+}
+.btn_accessories{
+    text-align: center;
+    margin-top: 41%;
+    margin-left: 8.7%;
+}
+.btn_accessories a{
+    color: #000000;
+    padding: 0.5rem 1rem;
+}
+.btn{
+    font-size:  16px;
+    font-family: sans-serif;
+}
+.btn-nonline{
+    font-size: 16px;
+    font-family: sans-serif;
+    text-decoration: none;
+    margin-left: -1.85%;
+}
+.Social{
+    list-style: none;
+    display: inline-block;
+    margin: 0 1rem;
+    position: relative;  
+}
+/* .IGIcon{
+    width: 50px;
+    cursor: pointer;
+    margin: 0 20px;
+    position: relative;
+}
+.WAIcon{
+    width: 50px;
+    cursor: pointer;
+    margin: 0 20px;
+    position: relative;
+}
+.FBIcon{
+    width: 50px;
+    cursor: pointer;
+    margin: 0 20px;
+    position: relative;
+} */
+.Social{
+    margin-left: 120px;
+}
+.SocialIcon{
+    width: 50px;
+    cursor: pointer;
+    margin: -9 10px;
+    position: relative;
+}
+/* .search-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+.search-btn{
+    width: 40%;
+    max-width: 700px;
+    background: rgba(255,255,255,0.2);
+    height: 40px;
+    margin-left: 170px;
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 10px 10px;
+}
+.search-btn input{
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 10px 10px;
+    font-size: 15px;
+    color: #000000; 
+}
+::placeholder{
+    color: #000000;
+}
+.search-btn button img{
+    width: 63px;
+}
+.search-btn button{
+    border: 0;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    cursor: pointer;
+} 

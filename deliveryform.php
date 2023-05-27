@@ -24,14 +24,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delivery</title>
-    <link rel="stylesheet" href="workerpgs.css">
+    <link rel="stylesheet" href="deliverypgs.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 </head>
 <body>
     <div class="main-box">
     <div class="box">
         <div class="navbar">
-            <a href="../Project/deliveryform.php" target="_blank"><img src="LOGO_STUDIO8.svg" class="logo_MAIN"></a>
+            <a href="MAINPAGE.php"><img src="LOGO_STUDIO8.svg" class="logo_MAIN"></a>
             <form action="findinsearch.php" class="search-btn">
                 <input type="text" name="textsearch" placeholder="Search Here!">
                 <select name="from">
