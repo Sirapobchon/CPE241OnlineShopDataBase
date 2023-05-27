@@ -1,11 +1,11 @@
-<link rel="stylesheet" href="workerpgcss.css">
+<link rel="stylesheet" href="workerpgs.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
 <div class="main-box">
 <div class="box">
-
-<h1 class="h1main">Studio8</h1>
-
+<div class="navbar">
+    <a href="../Project/deliveryform.php" target="_blank"><img src="LOGO_STUDIO8.svg" class="logo_MAIN"></a>
+</div>
 <form class="h2text">
     <select class="h2text" name="Type">
         <option value="Delivery">Delivery</option>
@@ -42,11 +42,11 @@ else{
     if (!mysqli_query($con,$sql)) {
         die('Error: ' . mysqli_error($con));
         }
-        echo "Success" ;
+        echo "<h2 class='h2text'>Success</h2>" ;
         
 }
 mysqli_close($con)
 ?>
 
-<form name="back" method="post" action="deliveryform.php">
-<input name="reset" type="submit" id="Back" value="Back"/>
+<form name="back" method="post" action="deliveryform.php" class="back-btn">
+<input name="reset" type="submit" id="Back" value="Back">

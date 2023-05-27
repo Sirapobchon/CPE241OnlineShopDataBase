@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delivery</title>
-    <link rel="stylesheet" href="workerpgcss.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-</head>
-<body>
-    <?php
+<?php
     $con=mysqli_connect("localhost","root","","studio8");
     // Check connection
     if (mysqli_connect_errno()) {
@@ -26,33 +15,43 @@
                 );";
     mysqli_query($con,$sql)
     
-    ?> 
-    
+?> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery</title>
+    <link rel="stylesheet" href="workerpgs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+</head>
+<body>
     <div class="main-box">
     <div class="box">
-    
-    <h1 class="h1main">Studio8</h1>
-    
-    <form class="h1text" name="search" action="findinsearch.php" method="get">
-        <table border='0' align='center'>
-            <tr>
-                <td><input name="textsearch" type="text" size="60"> In: 
-                    <select name="from">
-                        <option value="1">Order ID</option>
-                        <option value="2">Tracking Number</option>
-                        <option value="3">Responisble Employee ID</option>
-                    </select>
-                </td>
-                <td><input name="searchsubmit" type="submit" value="Search"></td>
-            </tr>
-        </table>
-    </form>
-    
-    <form class="h2text">
-        <select class="h2text" name="Type">
-            <option value="Delivery">Delivery</option>
-        </select>
-    </form>
+        <div class="navbar">
+            <a href="../Project/deliveryform.php" target="_blank"><img src="LOGO_STUDIO8.svg" class="logo_MAIN"></a>
+            <form action="findinsearch.php" class="search-btn">
+                <input type="text" name="textsearch" placeholder="Search Here!">
+                <select name="from">
+                    <!--<option value="4">Any</option>-->
+                    <option value="1">Order ID</option>
+                    <option value="2">Tracking Number</option>
+                    <option value="3">Responisble Employee ID</option>
+                </select>  
+                <button type="submit"><img src="searchIcon.png"></button>
+            </form> 
+            
+        </div>
+        
+        <div>
+            <form class="h2text">
+                <select class="h2text" name="Type">
+                    <option value="Delivery">Delivery</option>
+                </select>
+            </form>
+        </div>
 
     <br>
     <table border="0" align='center'>
@@ -75,7 +74,7 @@
             <td><input type="date" name="due_date"></td>
             <td><input type="date" name="got_date"></td>
             <td><input type="number" name="employee_ID"></td>
-            <td><input name="add" type="submit" ></td>
+            <td><input name="add" type="submit" value="Insert"></td>
             </form>
         </tr>
         <?php
@@ -93,6 +92,8 @@
                 echo "<td>" .$row["got_date"]. "</td>";
                 echo "<td align='center'>" .$row["employee_ID"]. "</td>";
                 echo "<form name='editdeliver' action='editdelivery.php' method='post'>";
+                echo "<input type='hidden' name='varname' value=".$row["order_ID"].">";
+                echo "<input type='hidden' name='type' value='1'>";
                 echo "<td><input name='edit' type='submit' value='Edit'></td>";
                 echo "</form>";
                 echo "</tr>";
