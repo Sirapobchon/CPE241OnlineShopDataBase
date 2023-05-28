@@ -8,12 +8,12 @@
 </div>
 <form class="h2text">
     <select class="h2text" name="Type">
-        <option value="Delivery">Delivery</option>
+        <option value="Order">Order</option>
     </select>
 </form>
 
 <?php
-$con=mysqli_connect("localhost","root","","online_store");
+$con=mysqli_connect("localhost","root","","studio8");
 // Check connection
 if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -40,7 +40,7 @@ $searchfrom = mysqli_escape_string($con, $_GET['from']);
 if(empty($_GET['textsearch'])){
 	echo "<h1 class='h1text'>To search for something, Please input item to search for.</h1>" ;
 }elseif($searchfrom == "1"){
-    $sql = "SELECT * FROM online_store.order WHERE order_id='$textsearch' ";
+    $sql = "SELECT * FROM studio8.order WHERE order_id='$textsearch' ";
     $result = mysqli_query($con, $sql);
     if(mysqli_num_rows($result) > 0){
         start_table();
@@ -54,16 +54,18 @@ if(empty($_GET['textsearch'])){
             echo "<td>" .$row["point_redeem"]. "</td>";
             echo "<td>" .$row["total"]. "</td>";
             echo "<td align='center'>" .$row["transaction_status"]. "</td>";
-            //echo "<form name="deldeliver" action="deldelivery.php" method="post">";
-            //echo "<td><input name='delete' type='submit' value='Delete'></td>";
-            //echo "</form>";
+            echo "<form name='orderedit' action='orderinEdit.php' method='post'>";
+            echo "<input type='hidden' name='varname' value=".$row["order_id"].">";
+            echo "<input type='hidden' name='type' value='1'>";
+            echo "<td><input name='edit' type='submit' value='Edit'></td>";
+            echo "</form>";
             echo "</tr>";
         }
     }else{
         echo "<h2>No results found.</h2>";
     }
 }elseif($searchfrom == "2"){
-    $sql = "SELECT * FROM online_store.order WHERE customer_id='$textsearch' ";
+    $sql = "SELECT * FROM studio8.order WHERE customer_id='$textsearch' ";
     $result = mysqli_query($con, $sql);
     if(mysqli_num_rows($result) > 0){
         start_table();
@@ -77,16 +79,18 @@ if(empty($_GET['textsearch'])){
             echo "<td>" .$row["point_redeem"]. "</td>";
             echo "<td>" .$row["total"]. "</td>";
             echo "<td align='center'>" .$row["transaction_status"]. "</td>";
-            //echo "<form name="deldeliver" action="deldelivery.php" method="post">";
-            //echo "<td><input name='delete' type='submit' value='Delete'></td>";
-            //echo "</form>";
+            echo "<form name='orderedit' action='orderinEdit.php' method='post'>";
+            echo "<input type='hidden' name='varname' value=".$row["order_id"].">";
+            echo "<input type='hidden' name='type' value='1'>";
+            echo "<td><input name='edit' type='submit' value='Edit'></td>";
+            echo "</form>";
             echo "</tr>";
         }
     }else{
         echo "<h2>No results found.</h2>";
     }
 }elseif($searchfrom == "3"){
-    $sql = "SELECT * FROM online_store.order WHERE customer_name='$textsearch' ";
+    $sql = "SELECT * FROM studio8.order WHERE customer_name='$textsearch' ";
     $result = mysqli_query($con, $sql);
     if(mysqli_num_rows($result) > 0){
         start_table();
@@ -100,18 +104,19 @@ if(empty($_GET['textsearch'])){
             echo "<td>" .$row["point_redeem"]. "</td>";
             echo "<td>" .$row["total"]. "</td>";
             echo "<td align='center'>" .$row["transaction_status"]. "</td>";
-            //echo "<form name="deldeliver" action="deldelivery.php" method="post">";
-            //echo "<td><input name='delete' type='submit' value='Delete'></td>";
-            //echo "</form>";
+            echo "<form name='orderedit' action='orderinEdit.php' method='post'>";
+            echo "<input type='hidden' name='varname' value=".$row["order_id"].">";
+            echo "<input type='hidden' name='type' value='1'>";
+            echo "<td><input name='edit' type='submit' value='Edit'></td>";
+            echo "</form>";
             echo "</tr>";
         }
     }else{
         echo "<h2>No results found.</h2>";
     }
 }elseif($searchfrom == "4"){
-    $sql = "SELECT * FROM online_store.order WHERE * employee_id '%$textsearch%'";
+    $sql = "SELECT * FROM studio8.order WHERE employee_id = '$textsearch'";
     $result = mysqli_query($con, $sql);
-    echo $result;
     if(mysqli_num_rows($result) > 0){
         start_table();
         while($row = mysqli_fetch_assoc($result)){
@@ -124,9 +129,11 @@ if(empty($_GET['textsearch'])){
             echo "<td>" .$row["point_redeem"]. "</td>";
             echo "<td>" .$row["total"]. "</td>";
             echo "<td align='center'>" .$row["transaction_status"]. "</td>";
-            //echo "<form name="deldeliver" action="deldelivery.php" method="post">";
-            //echo "<td><input name='delete' type='submit' value='Delete'></td>";
-            //echo "</form>";
+            echo "<form name='orderedit' action='orderinEdit.php' method='post'>";
+            echo "<input type='hidden' name='varname' value=".$row["order_id"].">";
+            echo "<input type='hidden' name='type' value='1'>";
+            echo "<td><input name='edit' type='submit' value='Edit'></td>";
+            echo "</form>";
             echo "</tr>";
         }
     }else{
@@ -135,5 +142,10 @@ if(empty($_GET['textsearch'])){
 }
 ?>
 </table><br>
-<form name="back" method="post" action="orderform.php">
-<input name="reset" type="submit" id="Back" value="Back"/>
+<div class="commitbar" align="center">
+    <div class="commitedit-btn" align="center" style="width: 64px;">
+        <form name="back" method="post" action="orderform.php">
+            <input name="reset" type="submit" id="Back" value="Back" style="margin-top: 20px;">
+        </form>
+    </div>
+</div>

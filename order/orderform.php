@@ -24,7 +24,7 @@ mysqli_query($con,$sql);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee</title>
+    <title>Order</title>
     <link rel="stylesheet" href="workerpgs.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 </head>
@@ -39,8 +39,8 @@ mysqli_query($con,$sql);
                     <!--<option value="5">Any</option>-->
                     <option value="1">Order ID</option>
                     <option value="2">Customer ID</option>
-                    <option value="3">Role ID</option>
-                    <option value="4">Status</option>
+                    <option value="3">Customer Name</option>
+                    <option value="4">Employee ID</option>
                 </select>  
                 <button type="submit"><img src="../icon/searchIcon.png"></button>
             </form> 
@@ -49,8 +49,9 @@ mysqli_query($con,$sql);
         
         <div>
             <form class="h2text">
-                <select class="h2text" name="Type">
-                    <option value="order">Order</option>
+                <select class="h2text" name="Type" onchange="location = this.value;">
+                    <option value="orderform.php" selected>Order</option>
+                    <option value="orderin/orderinform.php">Order_In</option>
                 </select>
             </form>
         </div>

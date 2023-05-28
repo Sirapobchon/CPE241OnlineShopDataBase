@@ -139,7 +139,7 @@ html , body {
 }
 .commitedit-btn{
     width: 256px;
-    background: rgb(155, 155, 155);
+    background-image: url(../main-asset/loginbg.jpg);
     height: 40px;
     display: flex;
     align-items: center;
@@ -158,6 +158,12 @@ html , body {
     font-size: 16px;
     color: #000000;
     margin: 4px;
+}
+.commitedit-btn input:hover{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-inline: 12px;
+    margin: 2px;
 }
 .back-btn{
     width: 45px;
