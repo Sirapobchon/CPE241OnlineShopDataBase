@@ -33,10 +33,14 @@ html , body {
 .h1text {
     font-family: sans-serif;
     /*display: inline-block;*/
-    margin-left: 20px;
     border: none;
 }
 .h2text {
+    font-family: sans-serif;
+    /*display: inline-block;*/
+    border: none;
+}
+.h2select {
     font-family: sans-serif;
     /*display: inline-block;*/
     margin-left: 20px;
@@ -139,7 +143,13 @@ html , body {
 }
 .commitedit-btn{
     width: 256px;
-    background: rgb(155, 155, 155);
+    background-image: url(loginbg.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
     height: 40px;
     display: flex;
     align-items: center;

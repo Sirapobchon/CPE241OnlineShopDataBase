@@ -6,8 +6,8 @@
 <div class="navbar">
     <a href="deliveryform.php" target="_blank"><img src="LOGO_STUDIO8.svg" class="logo_MAIN"></a>
 </div>
-<form class="h2text">
-    <select class="h2text" name="Type">
+<form class="h2select">
+    <select class="h2select" name="Type">
         <option value="Delivery">Delivery</option>
     </select>
 </form>
@@ -21,9 +21,9 @@ if (mysqli_connect_errno()) {
 
 //check empty
 if(empty($_POST['weight'])){
-	echo "Please Input data Package Weight" ;
+	echo "<h2 class='h2text' align='center'>Please Input data Package Weight</h2>" ;
 }elseif(empty($_POST['employee_ID'])){
-	echo "Please Input Employee ID" ;
+	echo "<h2 class='h2text' align='center'>Please Input Employee ID</h2>" ;
 }
 
 else{
@@ -42,11 +42,16 @@ else{
     if (!mysqli_query($con,$sql)) {
         die('Error: ' . mysqli_error($con));
         }
-        echo "<h2 class='h2text'>Success</h2>" ;
+        echo "<h1 class='h1text' align='center'>Success</h1>" ;
         
 }
 mysqli_close($con)
 ?>
 
-<form name="back" method="post" action="deliveryform.php" class="back-btn">
-<input name="reset" type="submit" id="Back" value="Back">
+<div class="commitbar" align="center">
+    <div class="commitedit-btn" align="center" style="width: 64px;">
+        <form name="back" method="post" action="deliveryform.php">
+            <input name="reset" type="submit" id="Back" value="Back" style="margin-top: 20px;">
+        </form>
+    </div>
+</div>

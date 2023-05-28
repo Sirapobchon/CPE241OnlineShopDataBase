@@ -6,8 +6,8 @@
 <div class="navbar">
     <a href="deliveryform.php" target="_blank"><img src="LOGO_STUDIO8.svg" class="logo_MAIN"></a>
 </div>
-<form class="h2text">
-    <select class="h2text" name="Type">
+<form class="h2select">
+    <select class="h2select" name="Type">
         <option value="Delivery">Delivery</option>
     </select>
 </form>
@@ -20,16 +20,17 @@ if (mysqli_connect_errno()) {
 }
 
 function start_table(){
-    echo "<h2 class='h2text'>The results:</h2>
+    echo "<h2 class='h2select'>The results:</h2>
         <table border='0' align='center'>
             <tr>
                 <td width='75'>Order ID</td>
-                <td>Package Weight</td>
-                <td>Delivery Status</td>
-                <td>Tracking Number</td>
-                <td>Delivery Date</td>
-                <td>Receive Date</td>
-                <td>Responisble Employee ID</td>
+                <td width='125'>Package Weight</td>
+                <td width='102'>Delivery Status</td>
+                <td width='180'>Tracking Number</td>
+                <td width='120'>Delivery Date</td>
+                <td width='120'>Receive Date</td>
+                <td width='180'>Responisble Employee ID</td>
+                <td>Edit Page</td>
             </tr>";
 }
 
@@ -37,7 +38,7 @@ $textsearch = mysqli_escape_string($con, $_GET['textsearch']);
 $searchfrom = mysqli_escape_string($con, $_GET['from']);
 //check empty
 if(empty($_GET['textsearch'])){
-	echo "<h1 class='h1text'>To search for something, Please input item to search for.</h1>" ;
+	echo "<h1 class='h1text' align='center'>To search for something, Please input item to search for.</h1>" ;
 }elseif($searchfrom == "1"){
     $sql = "SELECT * FROM delivery WHERE order_ID='$textsearch' ";
     $result = mysqli_query($con, $sql);
@@ -52,13 +53,15 @@ if(empty($_GET['textsearch'])){
             echo "<td>" .$row["due_date"]. "</td>";
             echo "<td>" .$row["got_date"]. "</td>";
             echo "<td align='center'>" .$row["employee_ID"]. "</td>";
-            //echo "<form name="deldeliver" action="deldelivery.php" method="post">";
-            //echo "<td><input name='delete' type='submit' value='Delete'></td>";
-            //echo "</form>";
+            echo "<form name='editdeliver' action='editdelivery.php' method='post'>";
+            echo "<input type='hidden' name='varname' value=".$row["order_ID"].">";
+            echo "<input type='hidden' name='type' value='1'>";
+            echo "<td><input name='edit' type='submit' value='Edit'></td>";
+            echo "</form>";
             echo "</tr>";
         }
     }else{
-        echo "<h2>No results found.</h2>";
+        echo "<h2 class='h2text' align='center'>No results found.</h2>";
     }
 }elseif($searchfrom == "2"){
     $sql = "SELECT * FROM delivery WHERE track_no='$textsearch' ";
@@ -74,13 +77,15 @@ if(empty($_GET['textsearch'])){
             echo "<td>" .$row["due_date"]. "</td>";
             echo "<td>" .$row["got_date"]. "</td>";
             echo "<td align='center'>" .$row["employee_ID"]. "</td>";
-            //echo "<form name="deldeliver" action="deldelivery.php" method="post">";
-            //echo "<td><input name='delete' type='submit' value='Delete'></td>";
-            //echo "</form>";
+            echo "<form name='editdeliver' action='editdelivery.php' method='post'>";
+            echo "<input type='hidden' name='varname' value=".$row["order_ID"].">";
+            echo "<input type='hidden' name='type' value='1'>";
+            echo "<td><input name='edit' type='submit' value='Edit'></td>";
+            echo "</form>";
             echo "</tr>";
         }
     }else{
-        echo "<h2>No results found.</h2>";
+        echo "<h2 class='h2text' align='center'>No results found.</h2>";
     }
 }elseif($searchfrom == "3"){
     $sql = "SELECT * FROM delivery WHERE employee_ID='$textsearch' ";
@@ -96,13 +101,15 @@ if(empty($_GET['textsearch'])){
             echo "<td>" .$row["due_date"]. "</td>";
             echo "<td>" .$row["got_date"]. "</td>";
             echo "<td align='center'>" .$row["employee_ID"]. "</td>";
-            //echo "<form name="deldeliver" action="deldelivery.php" method="post">";
-            //echo "<td><input name='delete' type='submit' value='Delete'></td>";
-            //echo "</form>";
+            echo "<form name='editdeliver' action='editdelivery.php' method='post'>";
+            echo "<input type='hidden' name='varname' value=".$row["order_ID"].">";
+            echo "<input type='hidden' name='type' value='1'>";
+            echo "<td><input name='edit' type='submit' value='Edit'></td>";
+            echo "</form>";
             echo "</tr>";
         }
     }else{
-        echo "<h2>No results found.</h2>";
+        echo "<h2 class='h2text' align='center'>No results found.</h2>";
     }
 }elseif($searchfrom == "4"){
     $sql = "SELECT * FROM delivery WHERE * LIKE '%$textsearch%'";
@@ -119,16 +126,23 @@ if(empty($_GET['textsearch'])){
             echo "<td>" .$row["due_date"]. "</td>";
             echo "<td>" .$row["got_date"]. "</td>";
             echo "<td align='center'>" .$row["employee_ID"]. "</td>";
-            //echo "<form name="deldeliver" action="deldelivery.php" method="post">";
-            //echo "<td><input name='delete' type='submit' value='Delete'></td>";
-            //echo "</form>";
+            echo "<form name='editdeliver' action='editdelivery.php' method='post'>";
+            echo "<input type='hidden' name='varname' value=".$row["order_ID"].">";
+            echo "<input type='hidden' name='type' value='1'>";
+            echo "<td><input name='edit' type='submit' value='Edit'></td>";
+            echo "</form>";
             echo "</tr>";
         }
     }else{
-        echo "<h2>No results found.</h2>";
+        echo "<h2 class='h2text' align='center'>No results found.</h2>";
     }
 }
 ?>
 </table><br>
-<form name="back" method="post" action="deliveryform.php">
-<input name="reset" type="submit" id="Back" value="Back"/>
+<div class="commitbar" align="center">
+    <div class="commitedit-btn" align="center" style="width: 64px;">
+        <form name="back" method="post" action="deliveryform.php">
+            <input name="reset" type="submit" id="Back" value="Back" style="margin-top: 20px;">
+        </form>
+    </div>
+</div>

@@ -23,11 +23,11 @@ if (!$conn) {
                 <button type="submit"><img src="icon/searchIcon.png"></button>
             </form>
             <ul>
-                <li><a href="#" class = "navbarTabFont">Overview</a></li>
+                <!--<li><a href="#" class = "navbarTabFont">Overview</a></li>-->
                 <li><a href="#" class = "navbarTabFont">About</a></li>
                 <li><a href="#" class = "navbarTabFont">Contract us</a></li>
                 <a href="#"><img src="icon/CartIcon.png" class="navbarIcon"></a>
-                <a href="MAINselect.php" target="_blank"><img src="icon/SignIcon.png" class="navbarIcon"></a>
+                <a href="MAINselect.php"><img src="icon/SignIcon.png" class="navbarIcon"></a>
             </ul>
         </div>
         <div class="btn_accessories">

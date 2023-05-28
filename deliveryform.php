@@ -46,8 +46,8 @@
         </div>
         
         <div>
-            <form class="h2text">
-                <select class="h2text" name="Type">
+            <form class="h2select">
+                <select class="h2select" name="Type">
                     <option value="Delivery">Delivery</option>
                 </select>
             </form>
@@ -56,13 +56,13 @@
     <br>
     <table border="0" align='center'>
         <tr>
-            <td>Order ID</td>
-            <td>Package Weight</td>
-            <td>Delivery Status</td>
-            <td>Tracking Number</td>
-            <td>Delivery Date</td>
-            <td>Receive Date</td>
-            <td>Responisble Employee ID</td>
+            <td width='75'>Order ID</td>
+            <td width='125'>Package Weight</td>
+            <td width='102'>Delivery Status</td>
+            <td width='180'>Tracking Number</td>
+            <td width='120'>Delivery Date</td>
+            <td width='120'>Receive Date</td>
+            <td width='180'>Responisble Employee ID</td>
             <td>Commit</td>
         </tr>
         <tr>
