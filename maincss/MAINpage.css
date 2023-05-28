@@ -1,21 +1,26 @@
 *{
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 .banner{
     width: 100%;
     height: 100vh;
-    background-image: url("BG_MAIN_STUDIO8.png");
+    background-image: url("../main-asset/BG_MAIN_STUDIO8.png");
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+    z-index: 1;
 }
 .navbar{
     width: 85%;
+    max-width: 1600px;
     margin: auto;
     padding: 35px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 20px
 }
 .navbarTabFont{
     font-weight: bold;
@@ -25,10 +30,14 @@
     width: 120px;
     cursor: pointer;
 }
+.navbar ul{
+    height: 45px;
+    min-width: 372px;
+}
 .navbar ul li{
     list-style: none;
     display: inline-block;
-    margin: 0 1rem;
+    margin: 0 10px;
     position: relative;  
 }
 .navbar ul li a{
@@ -52,19 +61,34 @@
 .navbarIcon{
     width: 20px;
     cursor: pointer;
-    margin: 0 20px;
+    margin: 0px 20px;
     position: relative;
+    padding-top: 2px;
+    padding-inline: 2px;
+}
+.navbarIcon:hover{
+    transition: 0.2s;
+    height: 22px;
+    width: 22px;
+    padding-top: 0px;
+    padding-inline: 0px;
+}
+.bottomdiv{
+    justify-content: fixed;
 }
 .btn_accessories{
     text-align: center;
-    margin-top: 41%;
+    margin-top: 82vh;
     margin-left: 8.7%;
+    justify-content: fixed;
+    z-index: 1;
 }
 .btn_accessories a{
     color: #000000;
     padding: 0.5rem 1rem;
 }
 .btn{
+    margin-right: 10px;
     font-size:  16px;
     font-family: sans-serif;
 }
@@ -79,26 +103,6 @@
     display: inline-block;
     margin: 0 1rem;
     position: relative;  
-}
-/* .IGIcon{
-    width: 50px;
-    cursor: pointer;
-    margin: 0 20px;
-    position: relative;
-}
-.WAIcon{
-    width: 50px;
-    cursor: pointer;
-    margin: 0 20px;
-    position: relative;
-}
-.FBIcon{
-    width: 50px;
-    cursor: pointer;
-    margin: 0 20px;
-    position: relative;
-} */
-.Social{
     margin-left: 120px;
 }
 .SocialIcon{
@@ -107,17 +111,11 @@
     margin: -9 10px;
     position: relative;
 }
-/* .search-bar{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
 .search-btn{
     width: 40%;
-    max-width: 700px;
+    min-width: 290px;
     background: rgba(255,255,255,0.2);
     height: 40px;
-    margin-left: 170px;
     display: flex;
     align-items: center;
     border-radius: 60px;
@@ -145,4 +143,8 @@
     height: 60px;
     background: transparent;
     cursor: pointer;
-} 
+}
+.bottominfo{
+    background-color: maroon;
+    z-index: 2;
+}

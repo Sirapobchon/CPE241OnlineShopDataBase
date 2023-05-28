@@ -1,10 +1,11 @@
+<title>Insert Delivery</title>
 <link rel="stylesheet" href="deliverypgs.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
 <div class="main-box">
 <div class="box">
 <div class="navbar">
-    <a href="deliveryform.php" target="_blank"><img src="LOGO_STUDIO8.svg" class="logo_MAIN"></a>
+    <a href="deliveryform.php"><img src="../main-asset/LOGO_STUDIO8.svg" class="logo_MAIN"></a>
 </div>
 <form class="h2select">
     <select class="h2select" name="Type">

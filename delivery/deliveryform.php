@@ -31,7 +31,7 @@
     <div class="main-box">
     <div class="box">
         <div class="navbar">
-            <a href="MAINPAGE.php"><img src="LOGO_STUDIO8.svg" class="logo_MAIN"></a>
+            <a href="../index.php"><img src="../main-asset/LOGO_STUDIO8.svg" class="logo_MAIN"></a>
             <form action="findinsearch.php" class="search-btn">
                 <input type="text" name="textsearch" placeholder="Search Here!">
                 <select name="from">
@@ -40,7 +40,7 @@
                     <option value="2">Tracking Number</option>
                     <option value="3">Responisble Employee ID</option>
                 </select>  
-                <button type="submit"><img src="icon/searchIcon.png"></button>
+                <button type="submit"><img src="../icon/searchIcon.png"></button>
             </form> 
             
         </div>
