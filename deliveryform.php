@@ -40,7 +40,7 @@
                     <option value="2">Tracking Number</option>
                     <option value="3">Responisble Employee ID</option>
                 </select>  
-                <button type="submit"><img src="searchIcon.png"></button>
+                <button type="submit"><img src="icon/searchIcon.png"></button>
             </form> 
             
         </div>
@@ -55,7 +55,7 @@
 
     <br>
     <table border="0" align='center'>
-        <tr>
+        <tr class='tablefont'>
             <td width='75'>Order ID</td>
             <td width='125'>Package Weight</td>
             <td width='102'>Delivery Status</td>

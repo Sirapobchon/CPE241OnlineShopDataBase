@@ -22,7 +22,7 @@ if (mysqli_connect_errno()) {
 function start_table(){
     echo "<h2 class='h2select'>Edit Entrie:</h2>
         <table border='0' align='center'>
-            <tr>
+            <tr class='tablefont'>
                 <td></td>
                 <td width='75'>Order ID</td>
                 <td width='125'>Package Weight</td>
@@ -150,7 +150,7 @@ function editinput($rowstatus,$rowduedate,$rowgotdate){
             <form name='editdeliver' action='editdelivery.php' method='post'>
                 <td></td>
                 <td><!--<input type='int' name='order_id' size='5'>--></td>
-                <td><input type='float' name='weight' size='12'></td>
+                <td><input type='float' name='weight' size='12' placeholder='no change'></td>
                 <td align='center'>
                 ";
                 if($rowstatus == 1){
@@ -158,10 +158,10 @@ function editinput($rowstatus,$rowduedate,$rowgotdate){
                 }else{
                     echo"<input type='checkbox' name='d_status'>";
                 }
-                echo "</td><td><input type='text' name='track_no'></td>
+                echo "</td><td><input type='text' name='track_no' placeholder='no change'></td>
                 <td><input type='date' name='due_date' value='$rowduedate'></td>
                 <td><input type='date' name='got_date' value='$rowgotdate'></td>
-                <td><input type='number' name='employee_ID'></td>
+                <td><input type='number' name='employee_ID' placeholder='no change'></td>
           </tr>
         </table>";
 }

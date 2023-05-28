@@ -22,7 +22,7 @@ if (mysqli_connect_errno()) {
 function start_table(){
     echo "<h2 class='h2select'>The results:</h2>
         <table border='0' align='center'>
-            <tr>
+            <tr class='tablefont'>
                 <td width='75'>Order ID</td>
                 <td width='125'>Package Weight</td>
                 <td width='102'>Delivery Status</td>

@@ -1,9 +1,7 @@
 html , body {               
     background-image: url(loginbg.jpg);
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     margin: 0;
     padding: 0;
 }
@@ -90,11 +88,10 @@ html , body {
 }
 
 .search-btn{
-    width: 40%;
-    max-width: 700px;
+    width: 100%;
+    max-width: 480px;
     background: rgba(180, 180, 180, 0.4);
     height: 40px;
-    margin-left: 170px;
     display: flex;
     align-items: center;
     border-radius: 60px;
@@ -102,24 +99,30 @@ html , body {
 }
 .search-btn input{
     background: transparent;
-    flex: 1;
+    flex: 0;
     border: 0;
     outline: none;
-    padding: 10px 10px;
-    font-size: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 60px;
+    font-size: 16px;
     color: #000000; 
 }
 .search-btn select{
     background: transparent;
-    flex: 1;
+    flex: 0;
     border: 0;
     outline: none;
-    padding: 10px 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-size: 15px;
-    color: #000000; 
+    color: #000000;
+    text-align: right; 
 }
 ::placeholder{
-    color: #000000;
+    color: #808080;
 }
 .search-btn button img{
     width: 63px;
@@ -169,6 +172,12 @@ html , body {
     color: #000000;
     margin: 4px;
 }
+.commitedit-btn input:hover{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-inline: 12px;
+    margin: 2px;
+}
 .back-btn{
     width: 45px;
     background: rgb(230, 230, 230);
@@ -184,4 +193,8 @@ html , body {
     border: 0;
     font-family: sans-serif;
     font-size: 16px;
+}
+.tablefont td{
+    font-family: sans-serif;
+    font-size: 14px;
 }
