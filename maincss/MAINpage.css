@@ -12,6 +12,15 @@
     background-attachment: fixed;
     z-index: 1;
 }
+.bannerplus{
+    width: 100%;
+    height: 100vh;
+    background-image: url("../main-asset/STUDIO8_1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 1;
+}
 .navbar{
     width: 85%;
     max-width: 1600px;

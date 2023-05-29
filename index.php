@@ -13,6 +13,7 @@ if (!$conn) {
 <head>
     <title>STUDIO8_Homepage</title>
     <link rel="stylesheet" href="maincss/MAINpage.css">
+    <link rel="stylesheet" href="main-unused/About.css">
 </head>
 <body>
     <div class="banner">
@@ -31,14 +32,22 @@ if (!$conn) {
             </ul>
         </div>
         <div class="btn_accessories">
-            <a href="#opening" class = "btn">View more accessories</a>
-            <a href="#opening" class = "btn-nonline"> ></a>
+            <a href="#accesories" class = "btn">View more accessories</a>
+            <a href="#accesories" class = "btn-nonline"> ></a>
         </div>
         <div class="Social">
             <a href="#" target="_blank"><img src="icon/IGIcon.png" class="SocialIcon"></a>
             <a href="#" target="_blank"><img src="icon/WhatAppIcon.png" class="SocialIcon"></a>
             <a href="#" target="_blank"><img src="icon/FBIcon.png" class="SocialIcon"></a>
         </div>
+    </div>
+    <div class="bannerplus">
+        <h1 id="accesories" class="h1text"></h1>
+            <img class="image" src="main-asset/STUDIO8_1.jpg" alt="acessoriesstudio8" usemap="#acessmap"">
+            <map name="acessmap">
+            <area shape="rect" coords="39,18,376,105" alt="acess" href="#">
+            <area shape="rect" coords="581,211,882,424" href="main-unused/buyggphone.php">
+        </map>
     </div>
     <!--<div class="bottominfo">
         <h1 id="opening" class="h1text"></h1>
