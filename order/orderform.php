@@ -51,7 +51,7 @@ mysqli_query($con,$sql);
             <form class="h2text">
                 <select class="h2text" name="Type" onchange="location = this.value;">
                     <option value="orderform.php" selected>Order</option>
-                    <option value="orderin/orderinform.php">Order_In</option>
+                    <option value="orderin/orderinform.php">Order Item</option>
                 </select>
             </form>
         </div>
@@ -83,7 +83,8 @@ mysqli_query($con,$sql);
         </tr>
         <?php
             $r=1;
-            $query = "SELECT * FROM studio8.order";
+            $query = "SELECT * FROM studio8.order
+                GROUP BY order_id ";
             $result = mysqli_query($con, $query);
             foreach( $result as $row ) {
                 $r++;

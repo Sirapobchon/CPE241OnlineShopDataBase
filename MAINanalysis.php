@@ -18,40 +18,40 @@
             </form>
         </div>
         <div class="selectemployeepg">
-            <form action="customer/Customer.php" class="userselectbtn" align="center">
-                <button type="submit" align="center">
-                    <img src="icon/SignIcon.png" align="center">
-                    <h2>CustomerInfo</h2>
-                </button>
-            </form>
-            <form action="employee/Employeeform.php" class="userselectbtn" align="center">
-                <button type="submit" align="center">
-                    <img src="icon/SignIcon.png" align="center">
-                    <h2>EmployeeInfo</h2>
-                </button>
-            </form>
-            <form action="order/orderform.php" class="userselectbtn" align="center">
+            <form action="analysis/report1.php" class="userselectbtn" align="center">
                 <button type="submit" align="center">
                     <img src="icon/bookIcon.png" align="center">
-                    <h2>Order</h2>
+                    <h2>Customer Report</h2>
                 </button>
             </form>
-            <form action="product/Form_Stock.php" class="userselectbtn" align="center">
-                <button type="submit" align="center">
-                    <img src="icon/ProductIcon.png" align="center">
-                    <h2>Product</h2>
-                </button>
-            </form>
-            <form action="delivery/deliveryform.php" class="userselectbtn" align="center">
-                <button type="submit" align="center">
-                    <img src="icon/DeliveryIcon.png" align="center">
-                    <h2>Delivery</h2>
-                </button>
-            </form>
-            <form action="MAINanalysis.php" class="userselectbtn" align="center">
+            <form action="analysis/Analysis2.php" class="userselectbtn" align="center">
                 <button type="submit" align="center">
                     <img src="icon/bookIcon.png" align="center">
-                    <h2>Analysis Report</h2>
+                    <h2>Daily Report</h2>
+                </button>
+            </form>
+            <form action="analysis/report3.php" class="userselectbtn" align="center">
+                <button type="submit" align="center">
+                    <img src="icon/bookIcon.png" align="center">
+                    <h2>Sale Report</h2>
+                </button>
+            </form>
+            <form action="analysis/Report4.php" class="userselectbtn" align="center">
+                <button type="submit" align="center">
+                    <img src="icon/bookIcon.png" align="center">
+                    <h2>Delivered Total Report</h2>
+                </button>
+            </form>
+            <form action="analysis/report5.php" class="userselectbtn" align="center">
+                <button type="submit" align="center">
+                    <img src="icon/bookIcon.png" align="center">
+                    <h2>Transaction Report</h2>
+                </button>
+            </form>
+            <form action="" class="userselectbtn" align="center">
+                <button type="submit" align="center">
+                    <img src="icon/PlusIcon.png" align="center">
+                    <h2>Add new report</h2>
                 </button>
             </form>
         </div>

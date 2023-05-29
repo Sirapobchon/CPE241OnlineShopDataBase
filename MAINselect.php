@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -18,7 +18,7 @@
             </form>
         </div>
         <div class="userselect">
-            <form action="" class="userselectbtn" align="center">
+            <form action="main-unused/Loginpage.php" class="userselectbtn" align="center">
                 <button type="submit" align="center">
                     <img src="icon/SignIcon.png" align="center">
                     <h2>Customer</h2>

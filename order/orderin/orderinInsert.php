@@ -20,29 +20,29 @@ if (mysqli_connect_errno()) {
 }
 
 //check empty
-if(empty($_POST['OrderID']))
+if(empty($_POST['order_id']))
 {
-	echo "Please Input Order ID" ;
+	echo "<h1 style='color:Black'margin:20px align='center' >Please Input Order ID" ;
 }
 else{
     //esc//ape variables for security
-    $OrderID = mysqli_escape_string($con, $_POST['OrderID']);
+    $order_id = mysqli_escape_string($con, $_POST['order_id']);
     //$ItemNo = mysqli_escape_string($con, $_POST['ItemNo']);
     $product_id = mysqli_escape_string($con, $_POST['product_id']);
 
-    $query = "SELECT MAX(ItemNo) AS max_address FROM orderin WHERE OrderID='$OrderID'";
+    $query = "SELECT MAX(ItemNo) AS max_address FROM orderin WHERE order_id='$order_id'";
     $result = mysqli_query($con, $query);
     $row = mysqli_fetch_assoc($result);
     $ItemNo = $row['max_address'] + 1;
 
-    $sql = "INSERT INTO orderin (OrderID,ItemNo,product_id)
-    VALUES ('$OrderID', '$ItemNo', '$product_id')
+    $sql = "INSERT INTO orderin (order_id,ItemNo,product_id)
+    VALUES ('$order_id', '$ItemNo', '$product_id')
     ";
     if (!mysqli_query($con,$sql))
         {
             die('Error: ' . mysqli_error($con));
         }
-        echo "Insert Success" ;
+        echo "<h1 style='color:Black'margin:20px align='center' >Insert Success</h1>" ;
         
 }
 mysqli_close($con)

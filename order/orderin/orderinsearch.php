@@ -23,9 +23,9 @@ function start_table(){
     echo "<h2 align='center' class='h2text'>The results</h2>
         <table border='0' align='center'>
             <tr>
-            <td width='100'>OrderID</td>
+            <td width='100'>Order ID</td>
             <td width='100'>ItemNo</td>
-            <td width='100'>product_id</td>
+            <td width='100'>Product ID</td>
             </tr>";
 }
 
@@ -33,19 +33,19 @@ $textsearch = $_GET['textsearch'];
 $searchfrom = mysqli_escape_string($con, $_GET['from']);
 //check empty
 if(empty($_GET['textsearch'])){
-	echo "<h1 class='h1text'>To search for something, Please input item to search for.</h1>" ;
+	echo "<h1 align='center' class='h1text'>To search for something, Please input item to search for.</h1>" ;
 }elseif($searchfrom == "1"){
-    $sql = "SELECT * FROM orderin WHERE OrderID='$textsearch' ";
+    $sql = "SELECT * FROM orderin WHERE order_id='$textsearch' ";
     $result = mysqli_query($con, $sql);
     if(mysqli_num_rows($result) > 0){
         start_table();
         while($row = mysqli_fetch_assoc($result)){
             echo "<tr>";
-                echo "<td>" .$row["OrderID"]. "</td>";
+                echo "<td>" .$row["order_id"]. "</td>";
                 echo "<td>" .$row["ItemNo"]. "</td>";
                 echo "<td>" .$row["product_id"]. "</td>";
                 echo "<form name='orderedit' action='orderinEdit.php' method='post'>";
-                echo "<input type='hidden' name='varname' value=".$row["OrderID"].">";
+                echo "<input type='hidden' name='varname' value=".$row["order_id"].">";
                 echo "<input type='hidden' name='type' value='1'>";
                 echo "<td><input name='edit' type='submit' value='Edit'></td>";
                 echo "</form>";

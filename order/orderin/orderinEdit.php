@@ -20,11 +20,11 @@ if (mysqli_connect_errno()) {
 }
 
 function start_table(){
-    echo "<h2 class='h2text'>The results:</h2>
+    echo "<h2 align='center' class='h2text'>The results:</h2>
         <table border='0' align='center'>
             <tr>
                 <td></td>
-                <td width='75'>OrderID</td>
+                <td width='75'>order_id</td>
                 <td>ItemNo</td>
                 <td>product_id</td>             
             </tr>";
@@ -34,14 +34,14 @@ $var_value = $_REQUEST['varname'];
 $var_no = $_REQUEST['varno'];
 $type_value = $_REQUEST['type'];
 if($type_value == 1){
-    $sql = "SELECT * FROM orderin WHERE OrderID='$var_value' && ItemNo='$var_no'";
+    $sql = "SELECT * FROM orderin WHERE order_id='$var_value' && ItemNo='$var_no'";
     $result = mysqli_query($con, $sql);
     if(mysqli_num_rows($result) > 0){
         start_table();
         while($row = mysqli_fetch_assoc($result)){
             echo "<tr>";
             echo "<td></td>";
-            echo "<td>" .$row["OrderID"]. "</td>";
+            echo "<td>" .$row["order_id"]. "</td>";
             echo "<td>" .$row["ItemNo"]. "</td>";
             echo "<td>" .$row["product_id"]. "</td>";
             echo "</tr>";
@@ -51,15 +51,15 @@ if($type_value == 1){
 }
 elseif($type_value == 2)
 {  
-    //$OrderID = mysqli_escape_string($con, $_POST['OrderID']);
+    //$order_id = mysqli_escape_string($con, $_POST['order_id']);
     $ItemNo = mysqli_escape_string($con, $_REQUEST['varno']);
     $product_id = mysqli_escape_string($con,$_POST['orderin']);
     if(!empty($product_id)){
-        $query = "UPDATE orderin SET product_id = '$product_id' WHERE OrderID='$var_value'  && ItemNo='$var_no'";
+        $query = "UPDATE orderin SET product_id = '$product_id' WHERE order_id='$var_value'  && ItemNo='$var_no'";
         mysqli_query($con, $query);
     }
 
-    $sql = "SELECT * FROM orderin WHERE OrderID='$var_value' && ItemNo='$var_no'";
+    $sql = "SELECT * FROM orderin WHERE order_id='$var_value' && ItemNo='$var_no'";
     $result = mysqli_query($con, $sql);
     if(mysqli_num_rows($result) > 0)
     {
@@ -67,7 +67,7 @@ elseif($type_value == 2)
         while($row = mysqli_fetch_assoc($result)){
             echo "<tr>";
             echo "<td style='font-family: sans-serif;'>After Edit</td>";
-            echo "<td>" .$row["OrderID"]. "</td>";
+            echo "<td>" .$row["order_id"]. "</td>";
             echo "<td>" .$row["ItemNo"]. "</td>";
             echo "<td align='center'>" .$row["product_id"]. "</td>";
             echo "</tr>";

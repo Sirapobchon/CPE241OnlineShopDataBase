@@ -20,7 +20,7 @@ if (mysqli_connect_errno()) {
 }
 
 function start_table(){
-    echo "<h2 class='h2text'>The results:</h2>
+    echo "<h2 align='center' class='h2text'>The results:</h2>
         <table border='0' align='center'>
             <tr>
                 <td width='75'>Order ID</td>
@@ -38,7 +38,7 @@ $textsearch = mysqli_escape_string($con, $_GET['textsearch']);
 $searchfrom = mysqli_escape_string($con, $_GET['from']);
 //check empty
 if(empty($_GET['textsearch'])){
-	echo "<h1 class='h1text'>To search for something, Please input item to search for.</h1>" ;
+	echo "<h1 style='color:Black'margin:20px align='center' >To search for something, Please input item to search for.</h1>" ;
 }elseif($searchfrom == "1"){
     $sql = "SELECT * FROM studio8.order WHERE order_id='$textsearch' ";
     $result = mysqli_query($con, $sql);
@@ -62,7 +62,7 @@ if(empty($_GET['textsearch'])){
             echo "</tr>";
         }
     }else{
-        echo "<h2>No results found.</h2>";
+        echo "<h2 align='center'>No results found.</h2>";
     }
 }elseif($searchfrom == "2"){
     $sql = "SELECT * FROM studio8.order WHERE customer_id='$textsearch' ";
@@ -87,7 +87,7 @@ if(empty($_GET['textsearch'])){
             echo "</tr>";
         }
     }else{
-        echo "<h2>No results found.</h2>";
+        echo "<h2 align='center'>No results found.</h2>";
     }
 }elseif($searchfrom == "3"){
     $sql = "SELECT * FROM studio8.order WHERE customer_name='$textsearch' ";
@@ -112,7 +112,7 @@ if(empty($_GET['textsearch'])){
             echo "</tr>";
         }
     }else{
-        echo "<h2>No results found.</h2>";
+        echo "<h2 align='center'>No results found.</h2>";
     }
 }elseif($searchfrom == "4"){
     $sql = "SELECT * FROM studio8.order WHERE employee_id = '$textsearch'";
@@ -137,7 +137,7 @@ if(empty($_GET['textsearch'])){
             echo "</tr>";
         }
     }else{
-        echo "<h2>No results found.</h2>";
+        echo "<h2 align='center'>No results found.</h2>";
     }
 }
 ?>

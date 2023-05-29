@@ -20,7 +20,7 @@ $delif_value = $_REQUEST['delif'];
 //echo"$delif_value";
 
 if($delif_value == 1) {
-    $query = "DELETE FROM orderin WHERE OrderID='$delem_value' && ItemNo='$delem_address'";
+    $query = "DELETE FROM orderin WHERE order_id='$delem_value' && ItemNo='$delem_address'";
     mysqli_query($con, $query);
     echo"<h2 style='color:black' align='center' class='sucess'>Sucessfully Deleted</h2>";
 }

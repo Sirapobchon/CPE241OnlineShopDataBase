@@ -21,15 +21,15 @@ if (mysqli_connect_errno()) {
 
 //check empty
 if(empty($_POST['order_id'])){
-	echo "Please Input data Order ID" ;
+	echo "<h1 style='color:Black'margin:20px align='center' >Please Input data Order ID" ;
 }elseif(empty($_POST['customer_id'])){
-	echo "Please Input data Customer ID" ;
+	echo "<h1 style='color:Black'margin:20px align='center' >Please Input data Customer ID" ;
 }elseif(empty($_POST['amount'])){
-	echo "Please Input data Amount" ;
+	echo "<h1 style='color:Black'margin:20px align='center' >Please Input data Amount" ;
 }elseif(empty($_POST['total'])){
-	echo "Please Input data Total Price" ;
+	echo "<h1 style='color:Black'margin:20px align='center' >Please Input data Total Price" ;
 }elseif(empty($_POST['transaction_status'])){
-	echo "Please Input data Transaction_Status" ;
+	echo "<h1 style='color:Black'margin:20px align='center' >Please Input data Transaction_Status" ;
 }else{
 	//esc//ape variables for security
 	$order_id = mysqli_escape_string($con, $_POST['order_id']);
@@ -46,7 +46,7 @@ if(empty($_POST['order_id'])){
 	if (!mysqli_query($con,$sql)) {
 	    die('Error: ' . mysqli_error($con));
 	    }
-	    echo "Success" ;
+	    echo "<h1 style='color:Black'margin:20px align='center' >Insert Success</h1>" ;
 }	
 
 mysqli_close($con)

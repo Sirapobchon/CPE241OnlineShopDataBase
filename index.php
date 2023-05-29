@@ -24,9 +24,9 @@ if (!$conn) {
             </form>
             <ul>
                 <!--<li><a href="#" class = "navbarTabFont">Overview</a></li>-->
-                <li><a href="#" class = "navbarTabFont">About</a></li>
-                <li><a href="#" class = "navbarTabFont">Contact us</a></li>
-                <a href="#"><img src="icon/CartIcon.png" class="navbarIcon"></a>
+                <li><a href="main-unused/About2.php" class = "navbarTabFont">About</a></li>
+                <li><a href="https://github.com/Sirapobchon" class = "navbarTabFont">Contact us</a></li>
+                <a href="transaction/MAINtransaction.php"><img src="icon/CartIcon.png" class="navbarIcon"></a>
                 <a href="MAINselect.php"><img src="icon/SignIcon.png" class="navbarIcon"></a>
             </ul>
         </div>

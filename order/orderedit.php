@@ -20,7 +20,7 @@ if (mysqli_connect_errno()) {
 }
 
 function start_table(){
-    echo "<h2 class='h2text'>The results:</h2>
+    echo "<h2 align='center' class='h2text'>The results:</h2>
         <table border='0' align='center'>
             <tr>
                 <td></td>

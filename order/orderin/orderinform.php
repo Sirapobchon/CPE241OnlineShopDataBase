@@ -5,7 +5,7 @@
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }
     $sql = "CREATE TABLE IF NOT EXISTS `orderin` (
-                `OrderID` int(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+                `order_id` int(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,
                 `ItemNo` int(20) NOT NULL,
                 `product_id` text NOT NULL
                 );
@@ -14,7 +14,7 @@
     $sql = "ALTER TABLE `orderin` 
                 DROP PRIMARY KEY,
                 ADD PRIMARY KEY (
-                `OrderID`, 
+                `order_id`, 
                 `ItemNo`
                 );
             ";
@@ -27,7 +27,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Address</title>
+    <title>Orderin</title>
     <link rel="stylesheet" href="../workerpgs.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 </head>
@@ -51,7 +51,7 @@
             <form class="h2text">
                 <select class="h2text" name="Type" onchange="location = this.value;">
                     <option value="../orderform.php">Order</option>
-                    <option value="orderinform.php" selected>Order_In</option>
+                    <option value="orderinform.php" selected>Order Item</option>
                 </select>
             </form>
         </div>
@@ -65,7 +65,7 @@
         </tr>
         <tr>
             <form name="OrderinInsert" action="orderinInsert.php" method="post">
-            <td><input type="int" name="OrderID" size="8"></td>
+            <td><input type="int" name="order_id" size="8"></td>
             <td><!--<input type="int" name="ItemNo" size="8">--></td>
             <td><input type="text" name="product_id"></td>
             <td><input name="add" type="submit" ></td>
@@ -78,11 +78,11 @@
             foreach( $result as $row ) {
                 $r++;
                 echo "<tr>";
-                echo "<td>" .$row["OrderID"]. "</td>";
+                echo "<td>" .$row["order_id"]. "</td>";
                 echo "<td>" .$row["ItemNo"]. "</td>";
                 echo "<td>" .$row["product_id"]. "</td>";
                 echo "<form name='orderinEdit' action='orderinEdit.php' method='post'>";
-                echo "<input type='hidden' name='varname' value=".$row["OrderID"].">";
+                echo "<input type='hidden' name='varname' value=".$row["order_id"].">";
                 echo "<input type='hidden' name='varno' value=".$row["ItemNo"].">";
                 echo "<input type='hidden' name='type' value='1'>";
                 echo "<td><input name='edit' type='submit' value='Edit'></td>";
