@@ -64,13 +64,13 @@
         <tr>
             <td width="100">CustomerID</td>
             <td width="100">AddressNo</td>
-            <td width="100">CustomerAddress</td>
+            <td width="300">CustomerAddress</td>
         </tr>
         <tr>
             <form name="CustomerAddressInsert" action="CustomerAddressInsert.php" method="post">
             <td><input type="int" name="CustomerID" size="8"></td>
             <td><!--<input type="int" name="AddressNo" size="8">--></td>
-            <td><input type="text" name="CustomerAddress"></td>
+            <td><input type="text" name="CustomerAddress" size="35"></td>
             <td><input name="add" type="submit" ></td>
             </form>
         </tr>

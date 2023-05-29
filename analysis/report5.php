@@ -45,7 +45,7 @@ echo "Failed to connect to MySQL: " . mysqli_connect_error();
             <?php
                     $r=1;
                     $query = "SELECT * FROM studio8.order
-                    ORDER BY transaction_status DESC";       
+                    ORDER BY transaction_status DESC,order_id";       
                     $result = mysqli_query($con, $query);
                     foreach( $result as $row ) {
                         $r++;
